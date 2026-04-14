@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+
+# Generated datasets and caches
+data/**/raw/
+data/**/processed/
+data/processed/
+
+# Large local artifacts
+outputs/*
+!outputs/paper_bitcoin/
+outputs/paper_bitcoin/*
+!outputs/paper_bitcoin/*.csv
+!outputs/paper_bitcoin/*.md
+
+# Compressed bundles
+*.zip
+
