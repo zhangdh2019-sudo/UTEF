@@ -1,33 +1,30 @@
-# EFGNN
-This repository is the official implementation of "[Uncertainty-Aware Graph Neural Networks: A Multi-Hop Evidence Fusion Approach](https://arxiv.org/abs/2506.13083)", accepted by IEEE Transactions on Neural Networks and Learning Systems.
+# UTEF
 
-# Setup
-```js/java/c#/text
-conda create -n EFGNN python=3.8
-conda activate EFGNN
+This repository contains the code, experiment scripts, and paper-oriented result summaries for a temporal signed trust evaluation workflow built on the `EFGNN-main` codebase.
+
+## Environment
+
+```text
+conda create -n utef python=3.8
+conda activate utef
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
-
 pip install --no-index torch-scatter -f https://pytorch-geometric.com/whl/torch-2.1.2+cu121.html
 pip install torch-geometric==2.6.1
-
 ```
 
-# Usage
-Just run the script corresponding to the dataset and method you want. For instance:
+## Main Entry Points
 
-```js/java/c#/text
-python main.py --dataset cora
-```
+- `main_link.py`: temporal signed trust prediction and baseline evaluation
+- `scripts/tune_ours_bitcoin.py`: tune the proposed model on Bitcoin-OTC and Bitcoin-Alpha
+- `scripts/build_bitcoin_paper_tables.py`: build paper-ready aggregate tables
 
-# Cite
-If you compare with, build on, or use aspects of this work, please cite the following:
+## Paper-Facing Outputs
 
-```js/java/c#/text
-@inproceedings{chen2025uncertainty,
-  title={Uncertainty-Aware Graph Neural Networks: A Multi-Hop Evidence Fusion Approach},
-  author={Chen, Qingfeng and Li, Shiyuan and Liu, Yixin and Pan, Shirui and Webb, Geoffrey and Zhang, Shichao},
-  journal={IEEE Transactions on Neural Networks and Learning Systems},
-  year={2025}
-}
-```
+The repository keeps only compact paper-facing summaries under `outputs/paper_bitcoin/`:
+
+- `bitcoin_compare_tuned_agg.csv`
+- `bitcoin_ablation_tuned_agg.csv`
+- `paper_summary.md`
+
+Raw datasets, caches, and large intermediate outputs are excluded via `.gitignore`.
 
